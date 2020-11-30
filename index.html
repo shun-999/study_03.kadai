@@ -6,19 +6,19 @@
     <body>
         <h2>eelテスト</h2>
         <form name="form">
-            検索ワード<input id="text" type='text' name='text'>
+            CSVファイル名<input id="filename" type="text" name="csvファイル名"><br>
+            検索ワード<input id="text" type='text' name='検索'>
                 <button id="search">検索</button><br>
-                <textarea id="result" name="textarea"></textarea>
+                <textarea id="result" name="textarea" class="text-area"></textarea>
         </form>
         <script type="text/javascript" src="./eel.js">
         </script>
         <script>
-            var search = document.getElementById('search')
             search.addEventListener('click', () => {
-                if(document.form.text.value == ""){
+                if(form.text.value == ""){
                     alert("入力してください")
                 }else{
-                    eel.kimetsu_search(document.form.text.value)
+                    eel.kimetsu_search(form.text.value, form.filename.value)
                 }
             })
 
